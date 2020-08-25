@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+
+    android:layout_marginBottom="16dp">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textAllCaps="true"
+        android:textSize="15sp"
+        android:text="Enter your details"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/full_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textCapWords"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_create"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/colorBlack"
+        android:textColorHighlight="@color/colorBlack"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:hint="your name"/>
+
+    <com.hbb20.CountryCodePicker
+        android:id="@+id/ccp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:ccpDialog_allowSearch="true"
+        app:ccpDialog_fastScroller_bubbleColor="@color/colorPrimaryDark"
+        app:ccpDialog_fastScroller_handleColor="@color/colorPrimaryDark"
+        app:ccpDialog_initialScrollToSelection="true"
+        app:ccpDialog_keyboardAutoPopup="false"
+        app:ccpDialog_showCloseIcon="true"
+        app:ccpDialog_showFastScroller="false"
+        app:ccpDialog_showPhoneCode="true"
+        app:ccpDialog_showTitle="false"
+        app:ccp_arrowColor="@color/colorPrimaryDark"
+        app:ccp_autoDetectCountry="false"
+        app:ccp_autoDetectLanguage="false"
+        app:ccp_autoFormatNumber="false"
+        app:ccp_clickable="true"
+        app:ccp_countryPreference="KE,TZ,UG"
+        app:ccp_defaultNameCode="KE"
+        app:ccp_hintExampleNumber="true"
+        app:ccp_rememberLastSelection="true"
+        app:ccp_selectionMemoryTag="signupCCP"
+        app:ccp_showArrow="true"
+        app:ccp_showFlag="true"
+        app:ccp_showFullName="false"
+        app:ccp_showNameCode="false"
+        app:ccp_showPhoneCode="true"
+        app:ccp_textGravity="RIGHT"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/full_name" />
+
+    <EditText
+        android:id="@+id/owner_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:hint="phone"
+        android:layout_marginTop="1dp"
+        android:textColorHighlight="@color/colorBlack"
+        android:inputType="phone"
+        android:padding="5dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toEndOf="@+id/ccp"
+        app:layout_constraintTop_toBottomOf="@id/full_name" />
+    <EditText
+        android:id="@+id/pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:hint="password"
+        android:drawablePadding="5dp"
+        android:drawableStart="@drawable/ic_create"
+        android:inputType="textPassword"
+        android:textColorHighlight="@color/colorBlack"
+        android:padding="5dp"
+        android:textColor="@color/colorBlack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/owner_phone" />
+    <TextView
+        android:id="@+id/cancel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pass"
+        android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginStart="20dp"
+        android:textSize="20sp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"/>
+    <TextView
+        android:id="@+id/done"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="15dp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pass"
+        android:text="Done"/>
+
+
+    <ProgressBar
+        android:id="@+id/pr"
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:max="100"
+        android:visibility="gone"
+        android:progress="50"
+        android:background="#000"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:indeterminate="true"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
